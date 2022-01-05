@@ -1,0 +1,111 @@
+#header_div {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: x-large;
+
+}
+
+/* css for the highscore button */
+#btn_highscore{
+    width: fit-content;
+    margin-left: 10px;
+    background-color: white;  
+    border-color: white;
+}
+
+/* css for the timer in the top right */
+#header_time{
+    width: fit-content;
+    padding-right: 10px;    
+}
+
+
+
+
+/* quiz intro */
+
+#intro{ 
+    display: flex;
+    flex-direction: column;
+    
+    /* change the display after the start quiz button has been pressed */
+    /* display: none */
+}
+#title{
+    margin-top: 10%;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    align-self: center;
+}
+   
+
+h2{
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px; 
+}
+
+
+#btn_start_quiz{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 15%;
+}
+
+/* end of quiz intro */
+
+
+
+
+
+
+/* quiz questions and answers */
+/* will be display none before and after the quiz */
+#quiz{
+    display:flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#quiz_question{
+    font-size: large;
+    font-weight: bold;
+}
+
+
+.answer_container{
+    display: flex; 
+    flex-direction: column;
+    
+}
+
+.btn_answers{
+    width: fit-content;
+    margin: 5px;
+}
+
+#right_wrong{
+    
+}
+
+/* end of questions and answers block */
+
+
+
+
+/* results and highscores */
+
+
+#results{
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+

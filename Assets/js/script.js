@@ -21,3 +21,5 @@
 
 //create a function to verify any answer.
 
+//create a function to subtract time from the clock if the answer is wrong.
+

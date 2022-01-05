@@ -4,23 +4,53 @@
         <title>Quiz</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="./assets/reset.css" />
-        <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+        <link rel="stylesheet" type="text/css" href="./Assets/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="./Assets/css/style.css" />
     </head>
     <body>
         <header>
             <!-- header should have a button to view highscores as well as a timer that shows time left. -->
+            <div id = "header_div">
+                <button id= "btn_highscore">View High Scores</button>
+                <p id = "header_time">Time: <span id="time_remaining">XX</span></p>
+            </div>
         </header>
 
 
         <main>
             <!-- the main should start with an intro and a button to start the quiz. -->
+            <div id = "intro">  
+                <h1 id="title">Code Quiz</h1>
+                <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will deduct ten seconds from you remaining time.</h2>
+                <button id= "btn_start_quiz">Start Quiz</button>
+            </div>
+            
             <!-- also should include 4 buttons for the multiple choice that will not be displayed until the quiz starts. -->
+            <!-- will use javascript to dynamicly change the contents of the button. -->
+            <div id = "quiz">
+                <p id="quiz_question">Questions go here.</p>
+                <div class = "answer_container">  
+                    <button class= "btn_answers" id = "btn_answer_1">1.</button>
+                    <button class= "btn_answers" id = "btn_answer_1">2.</button>
+                    <button class= "btn_answers" id = "btn_answer_1">3.</button>
+                    <button class= "btn_answers" id = "btn_answer_1">4.</button>
+                </div>
+                <!-- finaly should include a div to show if the answer was correct or not. -->
+                <p id= "right_wrong">Correct!</p>
+            </div>
+
+
             <!-- also should include a form for submiting name and score. -->
-            <!-- finaly should include a div to show if the answer was correct or not. -->
+            <div id="results">
+                <h3>All done!</h2>
+                <p>final score</p>
+                <form id = "name_form"></form>
+            </div>
+            
+            
         
         </main>
-        
+
         <script src="./assets/js/script.js"></script>
 
     </body>
