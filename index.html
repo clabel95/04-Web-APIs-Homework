@@ -27,24 +27,28 @@
             
             <!-- also should include 4 buttons for the multiple choice that will not be displayed until the quiz starts. -->
             <!-- will use javascript to dynamicly change the contents of the button. -->
-            <div id = "quiz">
+            <div id = "quiz" style="display:none">
                 <p id="quiz_question">Questions go here.</p>
                 <div class = "answer_container">  
                     <button class= "btn_answers" id = "btn_answer_1">1.</button>
-                    <button class= "btn_answers" id = "btn_answer_1">2.</button>
-                    <button class= "btn_answers" id = "btn_answer_1">3.</button>
-                    <button class= "btn_answers" id = "btn_answer_1">4.</button>
+                    <button class= "btn_answers" id = "btn_answer_2">2.</button>
+                    <button class= "btn_answers" id = "btn_answer_3">3.</button>
+                    <button class= "btn_answers" id = "btn_answer_4">4.</button>
                 </div>
                 <!-- finaly should include a div to show if the answer was correct or not. -->
-                <p id= "right_wrong">Correct!</p>
+                <p id= "right_wrong" style="display:none">Correct!</p>
             </div>
 
 
             <!-- also should include a form for submiting name and score. -->
-            <div id="results">
+            <div id="results" style="display:none">
                 <h3>All done!</h2>
                 <p>final score</p>
-                <form id = "name_form"></form>
+                <form id="name_form">
+                    <label for="Ini">Initials:</label>
+                    <input type="text" id="Ini" name="Ini"><br><br>
+                    <input type="submit" value="Submit">
+                  </form>
             </div>
             
             

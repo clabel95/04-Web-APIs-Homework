@@ -92,6 +92,7 @@ h2{
 }
 
 #right_wrong{
+    font-style: italic;
     
 }
 
@@ -104,6 +105,7 @@ h2{
 
 
 #results{
+    /* display: none; */
     margin-top: 10%;
     margin-left: 15%;
 }
