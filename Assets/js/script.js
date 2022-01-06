@@ -28,45 +28,53 @@ var q_num = 1;
 
 //define an object with properties being numbers and the values being the corosponding quiz question.
 //each of the quiz questions will corospond to the same numbered answer in each of the answers objects. 
-//I am doing it this way so that I can use the same number to get the question and all answers. 
+//I am doing it this way so that I can use the same number to get the question and all answers.
+
+//for the purpose of time I am going to set the correct answers to be 
+//1 
+//3 
+//2 
+//1 
+//4
+
 const questions = {
-    1: "a",
-    2: "b",
-    3: "c",
-    4: "d",
-    5: "e"
+    1: "Commonly used data types DO NOT include:",
+    2: "The condition in an if / else statement is enclosed within ______.",
+    3: "String valuse must be enclosed within ______ when being assigned to variables.",
+    4: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    5: "Arrays in JavaScript can be used to store ________."
 };
 
 const answers_row_1 = {
-    1:"a",
-    2:"b",
-    3:"c",
-    4:"d",
-    5:"e"
+    1:"alerts",
+    2:"quotes",
+    3:"curly brackets",
+    4:"console.log",
+    5:"numbers and strings"
 }
 
 const answers_row_2 = {
-    1:"a",
-    2:"b",
-    3:"c",
-    4:"d",
-    5:"e"
+    1:"strings",
+    2:"curly brackets",
+    3:"quotes",
+    4:"JavaScript",
+    5:"other arrays"
 }
 
 const answers_row_3 = {
-    1:"a",
-    2:"b",
-    3:"c",
-    4:"d",
-    5:"e"
+    1:"booleans",
+    2:"parenthesis",
+    3:"commas",
+    4:"terminal / bash",
+    5:"booleans"
 }
 
 const answers_row_4 = {
-    1:"a",
-    2:"b",
-    3:"c",
-    4:"d",
-    5:"e"
+    1:"numbers",
+    2:"square brackets",
+    3:"parenthesis",
+    4:"for loops",
+    5:"all of the above"
 }
 
 
@@ -101,7 +109,12 @@ function countdown() {
         timerEl.textContent = '0';
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
-        // Call the `displayMessage()` function
+        // if time left is 0 then end the quiz and go to the score page.
+        document.querySelector("#quiz").setAttribute("style", "display:none");
+        document.querySelector("#results").setAttribute("style", "display:flex");
+        timeLeft= 0;
+        q_num = 1;
+        final_score_page();
         
       }
     }, 1000);
@@ -113,7 +126,6 @@ function countdown() {
 document.querySelector("#btn_start_quiz").addEventListener("click", function(event){
     countdown();
     document.querySelector("#intro").setAttribute("style", "display:none");
-    document.querySelector("#btn_highscore").setAttribute("style", "display:none");
     document.querySelector("#quiz").setAttribute("style", "display:flex");
     quiz_update(q_num);
     
@@ -126,7 +138,6 @@ function quiz_update(i){
         document.querySelector("#results").setAttribute("style", "display:flex");
         timeLeft= 0;
         q_num = 1;
-        document.querySelector("#btn_highscore").setAttribute("style", "display:flex");
         final_score_page();
         //end the quiz
     }else{
@@ -218,6 +229,7 @@ document.querySelector("#btn_answer_4").addEventListener("click", function(event
     }
     q_num = q_num + 1;
     quiz_update(q_num)
+
 });
 
 //update final score 
@@ -231,7 +243,8 @@ document.querySelector("#submit_button").addEventListener("click", function(even
     var initials_input = document.getElementById("Ini").value;
     document.getElementById("Ini").value = "";
     document.querySelector("#results").setAttribute("style", "display:none");
-
+    timerEl.textContent = 60;
+    timeLeft = 60;
     document.querySelector("#high_scores_page").setAttribute("style", "display:flex");
     var table = document.getElementById("high_scores_table");
     var row = table.insertRow(1);
@@ -248,11 +261,12 @@ document.querySelector("#submit_button").addEventListener("click", function(even
 
 document.querySelector("#restart_quiz").addEventListener("click", function(event){
     correct_answers = 0;
+    
+    q_num = 1;
     document.getElementById("right_wrong").textContent = "";
     countdown();
     document.querySelector("#intro").setAttribute("style", "display:none");
     document.querySelector("#high_scores_page").setAttribute("style", "display:none");
-    document.querySelector("#btn_highscore").setAttribute("style", "display:none");
     document.querySelector("#quiz").setAttribute("style", "display:flex");
     quiz_update(q_num);
     

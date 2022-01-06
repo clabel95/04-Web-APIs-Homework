@@ -9,11 +9,10 @@
 }
 
 /* css for the highscore button */
-#btn_highscore{
-    width: fit-content;
-    margin-left: 10px;
-    background-color: white;  
-    border-color: white;
+button{
+    background-color: rgb(240, 62, 240);
+    border-radius:8px;
+    padding:5px;
 }
 
 /* css for the timer in the top right */
@@ -56,6 +55,9 @@ h2{
     flex-direction: column;
     width: fit-content;
     margin-left: 15%;
+    background-color: rgb(240, 62, 240);
+    border-radius:8px;
+    padding:5px;
 }
 
 /* end of quiz intro */
@@ -88,7 +90,10 @@ h2{
 }
 
 .btn_answers{
+    background-color: rgb(240, 62, 240);
+    border-radius:8px;
     width: fit-content;
+    padding:5px;
     margin: 5px;
 }
 
