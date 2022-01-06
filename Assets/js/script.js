@@ -13,6 +13,7 @@ var button_4 = document.getElementById("btn_answer_4");
 //  a variable that stores an aray with all the questions.
 var question = document.getElementById("quiz_question");
 //  final score
+var q_num = 1;
 
 
 
@@ -101,29 +102,108 @@ function countdown() {
 
 
 
-
+//this button starts the quiz time and updates the questions and answers for the first question.
 document.querySelector("#btn_start_quiz").addEventListener("click", function(event){
     document.querySelector("#intro").setAttribute("style", "display:none");
     document.querySelector("#quiz").setAttribute("style", "display:flex");
-    document.getElementById("quiz_question").value = "questions[1]";
-    quiz_start();
+    quiz_update(q_num);
     countdown();
-    
 });
 
-
-function quiz_start(){
-    console.log()
-    question.textContent = questions[1];
-    button_1.textContent = answers_row_1[1];
-    button_2.textContent = answers_row_2[1];
-    button_3.textContent = answers_row_3[1];
-    button_4.textContent = answers_row_4[1];
+//this function will update the quiz questions and answers depending on the value sent in.
+function quiz_update(i){
+    if (i > 5){
+        document.querySelector("#quiz").setAttribute("style", "display:none");
+        document.querySelector("#results").setAttribute("style", "display:flex");
+        //end the quiz
+    }else{
+        question.textContent = questions[i];
+        button_1.textContent = answers_row_1[i];
+        button_2.textContent = answers_row_2[i];
+        button_3.textContent = answers_row_3[i];
+        button_4.textContent = answers_row_4[i];
+    }
 }
 
 
+//for the purpose of time I am going to set the correct answers to be 
+//1 
+//3 
+//2 
+//1 
+//4
 
-//create a function to verify any answer.
+
+//Add an event listener for each quiz button then depending on the value of the answer buttton determine if the answer is correct or not.
+document.querySelector("#btn_answer_1").addEventListener("click", function(event){
+    document.querySelector("#right_wrong").setAttribute("style", "display:flex");
+    if (q_num == 1||q_num == 4){
+        //update the text to say the answer was correct.
+        //also add 1 to the variable that holds the number of correct answers.
+        document.getElementById("right_wrong").textContent = "Previous answer was Right :)";
+        console.log("right")
+    }else{
+        //update the text to say the answer was wrong.
+        document.getElementById("right_wrong").textContent = "Previous answer was Wrong :(";
+        console.log("wrong")
+    }
+    q_num = q_num + 1;
+    quiz_update(q_num)
+
+});
+
+document.querySelector("#btn_answer_2").addEventListener("click", function(event){
+    document.querySelector("#right_wrong").setAttribute("style", "display:flex");
+    if (q_num == 3){
+        //update the text to say the answer was correct.
+        //also add 1 to the variable that holds the number of correct answers.
+        document.getElementById("right_wrong").textContent = "Previous answer was Right :)";
+        console.log("right")
+    }else{
+        //update the text to say the answer was wrong.
+        document.getElementById("right_wrong").textContent = "Previous answer was Wrong :(";
+        console.log("wrong")
+    }
+    q_num = q_num + 1;
+    quiz_update(q_num)
+
+});
+
+document.querySelector("#btn_answer_3").addEventListener("click", function(event){
+    document.querySelector("#right_wrong").setAttribute("style", "display:flex");
+    if (q_num == 2){
+        //update the text to say the answer was correct.
+        //also add 1 to the variable that holds the number of correct answers.
+        document.getElementById("right_wrong").textContent = "Previous answer was Right :)";
+        console.log("right")
+    }else{
+        //update the text to say the answer was wrong.
+        document.getElementById("right_wrong").textContent = "Previous answer was Wrong :(";
+        console.log("wrong")
+    }
+    q_num = q_num + 1;
+    quiz_update(q_num)
+
+});
+
+document.querySelector("#btn_answer_4").addEventListener("click", function(event){
+    document.querySelector("#right_wrong").setAttribute("style", "display:flex");
+    if (q_num == 5){
+        //update the text to say the answer was correct.
+        //also add 1 to the variable that holds the number of correct answers.
+        document.getElementById("right_wrong").textContent = "Previous answer was Right :)";
+        console.log("right")
+    }else{
+        //update the text to say the answer was wrong.
+        document.getElementById("right_wrong").textContent = "Previous answer was Wrong :(";
+        console.log("wrong")
+    }
+    q_num = q_num + 1;
+    quiz_update(q_num)
+
+});
+
+
 
 
 
