@@ -19,6 +19,7 @@
 /* css for the timer in the top right */
 #header_time{
     width: fit-content;
+    justify-content: end;
     padding-right: 10px;    
 }
 
@@ -106,8 +107,32 @@ h2{
 
 #results{
     /* display: none; */
+    flex-direction: column;
     margin-top: 10%;
     margin-left: 15%;
+}
+
+#high_scores_page{
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 40%;
+    margin-right: 45%;
+    /* width: 50%; */
+    max-width: fit-content;
+}
+
+#high_scores_table{
+    border: 3px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    /* table-layout: fixed; */
+    /* width: 50%; */
+    text-align: center;
+}
+#high_scores_table tr{
+    border: 3px solid black; 
 }
 
 
