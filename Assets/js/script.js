@@ -5,7 +5,7 @@ var total_questions = 5;
 //  highscore
 var table = document.getElementById("high_scores_table");
 //  time
-var timeLeft = 60;
+var timeLeft = 59;
 var timerEl = document.getElementById('time_remaining');
 //  a variable for each of the 4 possible buttons for answers.
 var button_1 = document.getElementById("btn_answer_1");
@@ -40,7 +40,7 @@ var q_num = 1;
 const questions = {
     1: "Commonly used data types DO NOT include:",
     2: "The condition in an if / else statement is enclosed within ______.",
-    3: "String valuse must be enclosed within ______ when being assigned to variables.",
+    3: "String values must be enclosed within ______ when being assigned to variables.",
     4: "A very useful tool used during development and debugging for printing content to the debugger is:",
     5: "Arrays in JavaScript can be used to store ________."
 };
@@ -90,22 +90,18 @@ const answers_row_4 = {
 
 
 function countdown() {
-    // var timeLeft = 60;
+     //var timeLeft = 59;
   
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
       // As long as the `timeLeft` is greater than 1
-      if (timeLeft > 1) {
-        // Set the `textContent` of `timerEl` to show the remaining seconds
+      if (timeLeft > 0) {
+        // Set the `textContent` of `timerEl` to show the remaining time
         timerEl.textContent = timeLeft;
         // Decrement `timeLeft` by 1
-        timeLeft--;
-      } else if (timeLeft === 1) {
-        // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-        timerEl.textContent = timeLeft;
-        timeLeft--;
-      } else {
-        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+        timeLeft--;  
+        }else {
+        // Once `timeLeft` gets to 0, set `timerEl` to 0
         timerEl.textContent = '0';
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
@@ -244,7 +240,7 @@ document.querySelector("#submit_button").addEventListener("click", function(even
     document.getElementById("Ini").value = "";
     document.querySelector("#results").setAttribute("style", "display:none");
     timerEl.textContent = 60;
-    timeLeft = 60;
+    timeLeft = 59;
     document.querySelector("#high_scores_page").setAttribute("style", "display:flex");
     var table = document.getElementById("high_scores_table");
     var row = table.insertRow(1);
